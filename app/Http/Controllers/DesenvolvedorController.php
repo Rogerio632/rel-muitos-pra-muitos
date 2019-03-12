@@ -19,13 +19,18 @@ class DesenvolvedorController extends Controller
         echo "<p>Área: " . $d->area . "</p>";
         //echo "<p>" . $d->projetos->nome . "</p>";
        // echo "<p>" . $d->projetos->estimativa_hora . "</p>";
+            
        if(count($d->projetos) > 0){
            echo "Projeto(s): ";
            
            foreach($d->projetos as $p){
 
             echo "<li>" . $p->nome . "</li>";
-            echo "<li>Tempo estimado:" . $p->estimativa_hora . " horas</li>|";
+            echo "<li>Horas trabalhadas: " . $p->pivot->horas_semanais . "</li>";
+            echo "<li>Tempo estimado: " . $p->estimativa_hora . " horas</li><br>";
+            
+         
+               
 
            }
            echo "</ul>";
@@ -35,4 +40,14 @@ class DesenvolvedorController extends Controller
 
 
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

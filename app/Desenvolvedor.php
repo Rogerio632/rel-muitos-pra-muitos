@@ -10,7 +10,7 @@ class Desenvolvedor extends Model
 
     function projetos(){
 
-    return $this->belongsToMany('App\Projeto', 'locacoes');
+    return $this->belongsToMany('App\Projeto', 'locacoes')->withPivot('horas_semanais');
 
 
     }
